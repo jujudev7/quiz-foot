@@ -8,20 +8,22 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
   const handleAnswerOptionClick = (selectedAnswer: string) => {
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
     }
-    // La logique pour calculer le score est déjà ici, on garde cela.
+    setSelectedAnswer(selectedAnswer); // Met à jour la réponse sélectionnée
   };
 
   const handleNextQuestion = () => {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
+      setSelectedAnswer(null); // Réinitialise la sélection ici
     } else {
-      setShowScore(true); // Affiche le score si on est à la fin
+      setShowScore(true);
     }
   };
 
@@ -37,7 +39,8 @@ const Quiz = () => {
           currentQuestion={currentQuestion + 1}
           totalQuestions={questions.length}
           handleAnswer={handleAnswerOptionClick}
-          handleNextQuestion={handleNextQuestion} // Passer la fonction de navigation
+          handleNextQuestion={handleNextQuestion}
+          selectedAnswer={selectedAnswer} // Passe la réponse sélectionnée
         />
       )}
     </div>
