@@ -11,6 +11,7 @@ type QuestionProps = {
   currentQuestion: number;
   totalQuestions: number;
   handleAnswer: (selectedAnswer: string) => void;
+  handleNextQuestion: () => void;
 };
 
 const Question = ({
@@ -18,6 +19,7 @@ const Question = ({
   currentQuestion,
   totalQuestions,
   handleAnswer,
+  handleNextQuestion,
 }: QuestionProps) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
@@ -74,6 +76,7 @@ const Question = ({
         <button
           className="rounded bg-black text-white px-3 py-2 hover:bg-slate-800"
           disabled={!selectedAnswer} // Désactive le bouton tant qu'aucune réponse n'est sélectionnée
+          onClick={handleNextQuestion} // Appelle la fonction pour aller à la question suivante
         >
           <div className="flex flex-row gap-1">
             Prochaine question <ArrowRight />
