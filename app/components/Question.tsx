@@ -79,12 +79,25 @@ const Question = ({
 
       <div className="flex justify-end mt-4">
         <button
-          className="rounded bg-black text-white px-3 py-2 hover:bg-slate-800"
+          className={`rounded text-white px-3 py-2 hover:bg-slate-800 ${
+            currentQuestion === totalQuestions
+              ? "bg-indigo-700 hover:bg-indigo-800"
+              : "bg-black"
+          }`}
           disabled={!selectedOption} // Désactive le bouton tant qu'aucune réponse n'est sélectionnée
           onClick={handleNextQuestion} // Appelle la fonction pour aller à la question suivante
         >
           <div className="flex flex-row gap-1">
-            Question suivante <ArrowRight />
+            {/* Si c'est la dernière question, affiche "Résultat", sinon "Question suivante" */}
+            {currentQuestion === totalQuestions ? (
+              <>
+                Résultat <ArrowRight />
+              </>
+            ) : (
+              <>
+                Question suivante <ArrowRight />
+              </>
+            )}
           </div>
         </button>
       </div>
