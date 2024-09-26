@@ -89,25 +89,25 @@ const questions = [
     explanation:
       "Le Havre Athletic Club (HAC) a été fondé en 1894, l'OM en 1899, l'AS Saint-Étienne en 1919, alors que le Stade de Reims n'a vu le jour qu'en 1931.",
   },
-  {
-    question: "Quel club a remporté le plus de Coupes de France ?",
-    options: [
-      "AS Saint-Étienne",
-      "Olympique de Marseille",
-      "Paris Saint-Germain",
-      "RC Lens",
-    ],
-    correctAnswer: "Paris Saint-Germain",
-    explanation:
-      "Le PSG est le recordman de victoires en Coupe de France avec 15 trophées à son actif. L'OM en a remporté 10, Saint-Étienne 6, et étonnement, le RC Lens n'en a encore jamais gagné ! ",
-  },
-  {
-    question: "Quel est le nom de l'organisme qui gère la Ligue 1 ?",
-    options: ["FFF", "LFP", "UEFA", "FIFA"],
-    correctAnswer: "LFP",
-    explanation:
-      "La Ligue de Football Professionnel (LFP) gère le championnat de France. La FFF est, quant à elle, la Fédération Française de Football et gère la Coupe de France. L'UEFA est l'instance qui gère le football à l'échelle européenne (Euro et Coupes d'Europe), tandis que la FIFA gère le football international, notamment la Coupe du monde.",
-  },
+  // {
+  //   question: "Quel club a remporté le plus de Coupes de France ?",
+  //   options: [
+  //     "AS Saint-Étienne",
+  //     "Olympique de Marseille",
+  //     "Paris Saint-Germain",
+  //     "RC Lens",
+  //   ],
+  //   correctAnswer: "Paris Saint-Germain",
+  //   explanation:
+  //     "Le PSG est le recordman de victoires en Coupe de France avec 15 trophées à son actif. L'OM en a remporté 10, Saint-Étienne 6, et étonnement, le RC Lens n'en a encore jamais gagné ! ",
+  // },
+  // {
+  //   question: "Quel est le nom de l'organisme qui gère la Ligue 1 ?",
+  //   options: ["FFF", "LFP", "UEFA", "FIFA"],
+  //   correctAnswer: "LFP",
+  //   explanation:
+  //     "La Ligue de Football Professionnel (LFP) gère le championnat de France. La FFF est, quant à elle, la Fédération Française de Football et gère la Coupe de France. L'UEFA est l'instance qui gère le football à l'échelle européenne (Euro et Coupes d'Europe), tandis que la FIFA gère le football international, notamment la Coupe du monde.",
+  // },
   {
     question: "Quel club a eu le plus de titres consécutifs en Ligue 1 ?",
     options: [
