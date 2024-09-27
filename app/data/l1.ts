@@ -39,8 +39,8 @@ const questions = [
     options: [
       "Delio Onnis",
       "Jean-Pierre Papin",
-      "Carlos Bianchi",
       "Kylian Mbappé",
+      "Carlos Bianchi",
     ],
     correctAnswer: "Delio Onnis",
     explanation:
@@ -50,9 +50,9 @@ const questions = [
     question: "Qui est l'entraîneur le plus titré en Ligue 1 ?",
     options: [
       "Robert Herbin",
-      "Albert Batteux",
       "Lucien Leduc",
       "Laurent Blanc",
+      "Albert Batteux",
     ],
     correctAnswer: "Albert Batteux",
     explanation:
@@ -61,9 +61,9 @@ const questions = [
   {
     question: "Quel est le plus grand stade d'une équipe de Ligue 1 ?",
     options: [
-      "Groupama Stadium",
       "Parc des Princes",
       "Stade Orange Vélodrome",
+      "Groupama Stadium",
       "Stade de France",
     ],
     correctAnswer: "Stade Orange Vélodrome",
