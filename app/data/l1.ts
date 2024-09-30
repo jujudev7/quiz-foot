@@ -25,8 +25,8 @@ const questions = [
       "Quel club a remporté la première édition du Championnat de France ?",
     options: [
       "Stade de Reims",
-      "Olympique d'Antibes",
       "Olympique Lillois",
+      "Olympique d'Antibes",
       "Olympique de Marseille",
     ],
     correctAnswer: "Olympique Lillois",
@@ -81,9 +81,9 @@ const questions = [
     question: "Quel est le club le plus ancien de Ligue 1 encore en activité ?",
     options: [
       "Olympique de Marseille",
+      "AS Saint-Étienne",
       "Stade de Reims",
       "Le Havre",
-      "AS Saint-Étienne",
     ],
     correctAnswer: "Le Havre",
     explanation:
@@ -92,9 +92,9 @@ const questions = [
   {
     question: "Quel club a eu le plus de titres consécutifs en Ligue 1 ?",
     options: [
+      "Olympique Lyonnais",
       "Olympique de Marseille",
       "Paris Saint-Germain",
-      "Olympique Lyonnais",
       "AS Saint-Étienne",
     ],
     correctAnswer: "Olympique Lyonnais",
