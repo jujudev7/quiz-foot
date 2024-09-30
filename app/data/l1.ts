@@ -1,4 +1,4 @@
-// app/data/questions.ts
+// app/data/l1.ts
 const questions = [
   {
     question: "Quel club a remporté le plus de titres en Ligue 1 ?",

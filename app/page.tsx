@@ -10,7 +10,7 @@ export default function Home() {
         Apprends l&apos;histoire du foot tout en t&apos;amusant !
       </h2>
       <div className="flex flex-col items-center">
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 mb-6">
           <Link href="/quiz-l1">
             <h3 className="text-center font-bold text-xl mb-2">Quiz Ligue 1</h3>
             <Image
@@ -18,7 +18,7 @@ export default function Home() {
               alt="logo L1"
               width={400}
               height={300}
-              className="cursor-pointer rounded-xl hover:invert"
+              className="cursor-pointer rounded-xl border-4 hover:invert"
               priority
             />
           </Link>
@@ -32,6 +32,33 @@ export default function Home() {
               width={400}
               height={300}
               className="cursor-pointer rounded-xl border-4 border-sky-900 hover:invert"
+            />
+          </Link>
+        </div>
+        <div className="flex flex-row gap-4 mb-6">
+          <Link href="/quiz-c1">
+            <h3 className="text-center font-bold text-xl mb-2">
+              Quiz Ligue des Champions
+            </h3>
+            <Image
+              src="/covers/champions_league_cover.jpg"
+              alt="logo Ligue des Champions"
+              width={400}
+              height={300}
+              className="cursor-pointer rounded-xl border-4 border-sky-900 hover:invert"
+              priority
+            />
+          </Link>
+          <Link href="/quiz-cdm">
+            <h3 className="text-center font-bold text-xl mb-2">
+              Quiz Coupe du monde
+            </h3>
+            <Image
+              src="/covers/coupe_du_monde_cover.jpg"
+              alt="logo Coupe du monde"
+              width={400}
+              height={300}
+              className="cursor-pointer rounded-xl border-4 hover:invert"
             />
           </Link>
         </div>

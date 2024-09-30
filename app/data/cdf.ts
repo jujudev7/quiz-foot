@@ -1,4 +1,4 @@
-// app/data/questions.ts
+// app/data/cdf.ts
 const questions = [
   {
     question: "Quel club a remporté le plus de Coupes de France ?",
@@ -81,12 +81,12 @@ const questions = [
     question:
       "Quelle est la particularité du parcours victorieux en Coupe de France du FC Metz en 1987/1988 ?",
     options: [
-      "L'équipe était composée à 100% de joueurs étrangers",
-      "Le club n'a pas encaissé le moindre but",
-      "Le club n'a pas rencontré une seule équipe de D1",
-      "L'équipe a reçu un carton rouge à chaque match",
+      "L'équipe était composée à 100% de joueurs étrangers.",
+      "Le club n'a pas encaissé le moindre but.",
+      "Le club n'a pas rencontré une seule équipe de D1.",
+      "L'équipe a reçu un carton rouge à chaque match.",
     ],
-    correctAnswer: "Le club n'a pas rencontré une seule équipe de D1",
+    correctAnswer: "Le club n'a pas rencontré une seule équipe de D1.",
     explanation:
       "Vainqueur en finale de Sochaux (1-1 a.p., 5-4 t.a.b), le FC Metz n'a pas affronté la moindre équipe de Division 1 durant tout son parcours !",
   },
