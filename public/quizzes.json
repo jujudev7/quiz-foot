@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Quiz Ligue 1",
+    "category": "Ligue 1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "title": "Quiz Coupe de France",
+    "category": "Coupe de France",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "title": "Quiz Ligue des Champions",
+    "category": "C1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 4,
+    "title": "Quiz Coupe du Monde",
+    "category": "Coupe du Monde",
+    "difficulty": "medium"
+  }
+]
