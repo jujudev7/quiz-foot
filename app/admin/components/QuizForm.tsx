@@ -61,7 +61,10 @@ const QuizForm: React.FC<QuizFormProps> = ({ onSubmit, initialData }) => {
         <option value="medium">Moyen</option>
         <option value="hard">Difficile</option>
       </select>
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-4">
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded mt-4"
+      >
         {initialData ? "Modifier le Quiz" : "Ajouter le Quiz"}
       </button>
     </form>

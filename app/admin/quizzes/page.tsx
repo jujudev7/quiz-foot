@@ -54,7 +54,7 @@ const QuizzesAdmin = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 md:w-2/3 sm:w-full">
       <h1 className="text-2xl font-bold mb-4">Gestion des Quiz</h1>
       <QuizForm
         onSubmit={editingQuiz ? handleUpdateQuiz : handleAddQuiz}
@@ -67,13 +67,13 @@ const QuizzesAdmin = () => {
             <div>
               <button
                 onClick={() => handleEditQuiz(quiz.id)}
-                className="text-blue-500 hover:underline mr-4"
+                className="text-sm text-black bg-yellow-400 rounded hover:bg-yellow-500 px-2 py-1 mb-1"
               >
                 Modifier
               </button>
               <button
                 onClick={() => handleDeleteQuiz(quiz.id)}
-                className="text-red-500 hover:underline"
+                className="text-sm text-white bg-red-500 rounded hover:bg-red-700 px-2 py-1 mb-1 ml-2"
               >
                 Supprimer
               </button>
