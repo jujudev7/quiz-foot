@@ -14,6 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import SignIn from "./sign-in";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -147,6 +148,7 @@ export function Navbar() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        <SignIn />
       </NavigationMenuList>
     </NavigationMenu>
   );
