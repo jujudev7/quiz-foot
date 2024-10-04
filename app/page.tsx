@@ -16,8 +16,8 @@ export default function Home() {
             <Image
               src="/covers/ligue_1_cover.jpg"
               alt="logo L1"
-              width={400}
-              height={300}
+              width={420}
+              height={280}
               className="cursor-pointer rounded-xl border-4 hover:invert"
               priority
             />
@@ -29,8 +29,8 @@ export default function Home() {
             <Image
               src="/covers/coupe_de_france_cover.jpg"
               alt="logo Coupe de France"
-              width={400}
-              height={300}
+              width={420}
+              height={280}
               className="cursor-pointer rounded-xl border-4 border-sky-900 hover:invert"
             />
           </Link>
@@ -43,8 +43,8 @@ export default function Home() {
             <Image
               src="/covers/champions_league_cover.jpg"
               alt="logo Ligue des Champions"
-              width={400}
-              height={300}
+              width={420}
+              height={280}
               className="cursor-pointer rounded-xl border-4 border-sky-900 hover:invert"
               priority
             />
@@ -56,8 +56,8 @@ export default function Home() {
             <Image
               src="/covers/coupe_du_monde_cover.jpg"
               alt="logo Coupe du monde"
-              width={400}
-              height={300}
+              width={420}
+              height={280}
               className="cursor-pointer rounded-xl border-4 hover:invert"
             />
           </Link>
