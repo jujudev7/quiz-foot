@@ -18,10 +18,11 @@ export default function ClientLayout({
 
   return (
     <>
-      <div className="w-full flex justify-center">
-        {!shouldHideNavbar && <Navbar className="mt-2" />}
+      <div className="w-full flex justify-center bg-gradient-to-b from-slate-200 via-white to-white">
+        {!shouldHideNavbar && <Navbar />}
       </div>
       <main>{children}</main>
     </>
   );
 }
+
