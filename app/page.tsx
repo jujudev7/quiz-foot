@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container mx-auto 2xl w-full p-4 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-2">Quiz Football</h1>
+    <div className="container mx-auto 2xl w-full p-4 text-white flex flex-col items-center">
+      <h1 className="text-3xl font-bold my-2">Quiz Football</h1>
       <h2 className="italic font-bold text-xl text-sky-500 mb-6">
         Apprends l&apos;histoire du foot tout en t&apos;amusant !
       </h2>
@@ -16,8 +16,8 @@ export default function Home() {
             <Image
               src="/covers/ligue_1_cover.jpg"
               alt="logo L1"
-              width={420}
-              height={280}
+              width={390}
+              height={260}
               className="cursor-pointer rounded-xl border-4 hover:invert"
               priority
             />
@@ -29,8 +29,8 @@ export default function Home() {
             <Image
               src="/covers/coupe_de_france_cover.jpg"
               alt="logo Coupe de France"
-              width={420}
-              height={280}
+              width={390}
+              height={260}
               className="cursor-pointer rounded-xl border-4 border-sky-900 hover:invert"
             />
           </Link>
@@ -43,8 +43,8 @@ export default function Home() {
             <Image
               src="/covers/champions_league_cover.jpg"
               alt="logo Ligue des Champions"
-              width={420}
-              height={280}
+              width={390}
+              height={260}
               className="cursor-pointer rounded-xl border-4 border-sky-900 hover:invert"
               priority
             />
@@ -56,9 +56,10 @@ export default function Home() {
             <Image
               src="/covers/coupe_du_monde_cover.jpg"
               alt="logo Coupe du monde"
-              width={420}
-              height={280}
+              width={390}
+              height={260}
               className="cursor-pointer rounded-xl border-4 hover:invert"
+              priority
             />
           </Link>
         </div>
