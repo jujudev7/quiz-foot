@@ -55,14 +55,14 @@ const components: { title: string; href: string; description: string }[] = [
 export function Navbar() {
   return (
     <div>
-      <NavigationMenu className="flex justify-center">
+      <NavigationMenu className="flex justify-center my-2">
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
+                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
                 }
               >
                 Accueil 🏠
@@ -74,16 +74,16 @@ export function Navbar() {
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
+                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
                 }
               >
-                Administration des Quiz
+                Administration
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-md">
+            <NavigationMenuTrigger className="text-md hover:bg-indigo-500 hover:text-white">
               Getting started
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -118,7 +118,7 @@ export function Navbar() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-md">
+            <NavigationMenuTrigger className="text-md hover:bg-indigo-500 hover:text-white">
               Components
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -140,7 +140,7 @@ export function Navbar() {
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
+                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
                 }
               >
                 Documentation
@@ -152,7 +152,7 @@ export function Navbar() {
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group cursor-pointer")
+                  "text-md px-4 py-2 rounded-md transition-colors text-white bg-indigo-700 hover:bg-indigo-900  focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group cursor-pointer")
                 }
               >
                 Connexion
@@ -190,3 +190,4 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
+
