@@ -54,7 +54,7 @@ const QuizzesAdmin = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 md:w-2/3 sm:w-full">
+    <div className="container mx-auto rounded-xl bg-white p-4 md:w-2/3 sm:w-full my-8">
       <h1 className="text-2xl font-bold mb-4">Gestion des Quiz</h1>
       <QuizForm
         onSubmit={editingQuiz ? handleUpdateQuiz : handleAddQuiz}
@@ -86,3 +86,4 @@ const QuizzesAdmin = () => {
 };
 
 export default QuizzesAdmin;
+
