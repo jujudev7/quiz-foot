@@ -36,7 +36,7 @@ const Question = ({
   }, [question]);
 
   return (
-    <div className="question-section w-full rounded-md bg-yellow-300 p-4 space-y-4">
+    <div className="question-section w-full rounded-xl bg-yellow-300 p-8 space-y-8 mt-4 h-3/4">
       <div className="question-count">
         <span className="italic">Question {currentQuestion}</span>/
         {totalQuestions}
@@ -61,7 +61,7 @@ const Question = ({
           return (
             <button
               key={index}
-              className={`${bgColor} text-white text-lg px-4 py-6 rounded-md ${
+              className={`${bgColor} text-white text-lg px-4 py-6 rounded-xl ${
                 !selectedOption ? "hover:bg-fuchsia-500" : ""
               }`}
               onClick={() => handleClick(option)}
@@ -79,23 +79,25 @@ const Question = ({
 
       <div className="flex justify-end mt-4">
         <button
-          className={`rounded text-white px-3 py-2 hover:bg-slate-800 ${
+          className={`rounded-lg text-white px-3 py-2 hover:bg-purple-800 ${
             currentQuestion === totalQuestions
-              ? "bg-indigo-700 hover:bg-indigo-800"
+              ? " bg-orange-600 hover:bg-black"
               : "bg-black"
           }`}
           disabled={!selectedOption} // Désactive le bouton tant qu'aucune réponse n'est sélectionnée
           onClick={handleNextQuestion} // Appelle la fonction pour aller à la question suivante
         >
-          <div className="flex flex-row gap-1">
+          <div className="flex flex-row gap-1 group">
             {/* Si c'est la dernière question, affiche "Résultat", sinon "Question suivante" */}
             {currentQuestion === totalQuestions ? (
               <>
-                Résultat <ArrowRight />
+                Résultat{" "}
+                <ArrowRight className="transition-transform transform group-hover:translate-x-1 duration-200" />
               </>
             ) : (
               <>
-                Question suivante <ArrowRight />
+                Question suivante{" "}
+                <ArrowRight className="transition-transform transform group-hover:translate-x-1 duration-200" />
               </>
             )}
           </div>
