@@ -1,10 +1,12 @@
 // app/sign-in/page.tsx
 "use client";
 
-import { signIn } from "next-auth/react";
 import Image from "next/image";
 
 export default function SignInPage() {
+  console.log("AUTH_SECRET:", process.env.AUTH_SECRET);
+  console.log("NEXTAUTH_URL:", process.env.NEXTAUTH_URL);
+
   return (
     <div className="w-full p-4 flex items-center justify-center h-screen flex-col">
       <div className="signin-container 2xl:w-1/3 xl:w-2/5 lg:w-1/2 md:w-3/5 sm:w-2/3 rounded-3xl bg-white border p-6 shadow-md">
@@ -12,19 +14,7 @@ export default function SignInPage() {
           Connexion à Quiz Foot
         </h1>
         <div className="xl:w-3/5 lg:w-3/5 md:w-2/3 sm:w-3/4 mx-auto">
-          <button
-            onClick={() =>
-              signIn("google", { callbackUrl: "/admin/quizzes" }).catch(
-                (error) => {
-                  console.error(
-                    "Erreur lors de la tentative de connexion avec Google : ",
-                    error
-                  );
-                }
-              )
-            }
-            className="flex mx-auto rounded-full lg:text-base sm:text-sm text-sm p-2 border border-1 hover:border-slate-600 my-8"
-          >
+          <button className="flex mx-auto rounded-full lg:text-base sm:text-sm text-sm p-2 border border-1 hover:border-slate-600 my-8">
             <Image
               src="/google.svg"
               alt="logo Google"
@@ -42,7 +32,7 @@ export default function SignInPage() {
             <span className="mx-4 text-gray-600">OU</span>
             <hr className="flex-grow border-t border-gray-300 my-4" />
           </div>
-          <form className="w-full">
+          <form className="w-full" action="">
             <div className="my-6">
               <label htmlFor="email" className="block text-sm font-medium mb-2">
                 Email
