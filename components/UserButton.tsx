@@ -54,7 +54,10 @@ export default function UserButton({ user }: UserButtonProps) {
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           {/* TODO: Add a logout functionality */}
-          <button className="flex w-full items-center">
+          <button
+            onClick={() => signOut({ callbackUrl: "/" })}
+            className="flex w-full items-center"
+          >
             <LogOut className="mr-2 h-4 w-4" /> Déconnexion
           </button>
         </DropdownMenuItem>

@@ -1,4 +1,5 @@
-import { auth, signIn } from "@/auth";
+"use client";
+
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import * as React from "react";
@@ -12,8 +13,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "../components/ui/navigation-menu";
-import { Button } from "./ui/button";
-import UserButton from "./UserButton";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,13 +52,14 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export async function Navbar() {
-  const session = await auth();
-  const user = session?.user;
+export default function Navbar() {
+  // export async function Navbar() {
+  //   const session = await auth();
+  //   const user = session?.user;
 
   return (
     <div>
-      <NavigationMenu className="my-2 flex justify-center px-2">
+      <NavigationMenu className="my-2 flex justify-center px-2 py-1">
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
@@ -163,9 +163,9 @@ export async function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem className="flex items-center px-2 py-1">
+          {/* <NavigationMenuItem className="flex items-center px-2">
             {user ? <UserButton user={user} /> : <SignInButton />}
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
     </div>
@@ -198,14 +198,6 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-function SignInButton() {
-  return (
-    <form
-      action={async () => {
-        await signIn();
-      }}
-    >
-      <Button type="submit">Sign in</Button>
-    </form>
-  );
-}
+// function SignInButton() {
+//   return <Button onClick={() => signIn()}>Connexion</Button>;
+// }

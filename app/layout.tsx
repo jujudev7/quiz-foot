@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { SessionProvider } from "next-auth/react";
 import localFont from "next/font/local";
-import { Navbar } from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import { Toaster } from "../components/ui/toaster";
 import "./globals.css";
 
@@ -35,11 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-gradient-to-r from-slate-950 to-indigo-500 antialiased`}
       >
-        <SessionProvider>
-          <Navbar />
-          {children}
-          <Toaster />
-        </SessionProvider>
+        {/* <SessionProvider> */}
+        <Navbar />
+        {children}
+        <Toaster />
+        {/* </SessionProvider> */}
       </body>
     </html>
   );
