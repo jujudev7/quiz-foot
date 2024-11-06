@@ -12,7 +12,7 @@ export async function updateProfile(values: UpdateProfileValues) {
   const userId = session?.user?.id;
 
   if (!userId) {
-    throw Error("Unauthorized");
+    throw Error("Interdit");
   }
 
   const { name } = updateProfileSchema.parse(values);

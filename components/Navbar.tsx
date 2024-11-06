@@ -1,6 +1,8 @@
-"use client";
-
-import { Icons } from "@/components/icons";
+import { auth, signIn } from "@/auth";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import * as React from "react";
+import { Icons } from "../components/ui/icons";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,10 +11,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import * as React from "react";
+} from "../components/ui/navigation-menu";
+import { Button } from "./ui/button";
+import UserButton from "./UserButton";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -52,17 +53,20 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function Navbar() {
+export async function Navbar() {
+  const session = await auth();
+  const user = session?.user;
+
   return (
     <div>
-      <NavigationMenu className="flex justify-center my-2">
+      <NavigationMenu className="my-2 flex justify-center px-2">
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
+                  "text-md group rounded-md px-4 py-2 transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50")
                 }
               >
                 Accueil 🏠
@@ -74,7 +78,7 @@ export function Navbar() {
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
+                  "text-md group rounded-md px-4 py-2 transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50")
                 }
               >
                 Administration
@@ -140,7 +144,7 @@ export function Navbar() {
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group")
+                  "text-md group rounded-md px-4 py-2 transition-colors hover:bg-indigo-500 hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50")
                 }
               >
                 Documentation
@@ -152,12 +156,15 @@ export function Navbar() {
               <NavigationMenuLink
                 className={
                   (navigationMenuTriggerStyle(),
-                  "text-md px-4 py-2 rounded-md transition-colors text-white bg-indigo-700 hover:bg-indigo-900  focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group cursor-pointer")
+                  "text-md group cursor-pointer rounded-md bg-indigo-700 px-4 py-2 text-white  transition-colors hover:bg-black focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50")
                 }
               >
                 Connexion
               </NavigationMenuLink>
             </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="flex items-center px-2 py-1">
+            {user ? <UserButton user={user} /> : <SignInButton />}
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
@@ -176,7 +183,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           {...props}
         >
@@ -191,3 +198,14 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
+function SignInButton() {
+  return (
+    <form
+      action={async () => {
+        await signIn();
+      }}
+    >
+      <Button type="submit">Sign in</Button>
+    </form>
+  );
+}

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import questions from "../data/l1"; // Importation des questions
+import questions from "../app/data/cdm"; // Importation des questions
 import Question from "./Question"; // Composant pour afficher la question
 
-const QuizL1 = () => {
+const QuizCdm = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -40,7 +40,10 @@ const QuizL1 = () => {
             {score >= 9 ? (
               <>
                 <p className="font-bold">Bravo 👏👏👏</p>
-                <p>La Ligue 1 n&apos;a presque plus aucun secret pour toi !</p>
+                <p>
+                  La Coupe du monde n&apos;a presque plus aucun secret pour toi
+                  !
+                </p>
                 <Image
                   className="mx-auto my-4"
                   src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTMwdTEzOGIwcmRuOWZ2NXkybmp4MmUwN3BvNHpwYmEzcGlvdnAybyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TjAcxImn74uoDYVxFl/giphy.webp"
@@ -53,8 +56,8 @@ const QuizL1 = () => {
               <>
                 <p className="font-bold">Pas mal 👍</p>
                 <p>
-                  Tu as de bonnes connaissances sur le Championnat de France,
-                  mais tu peux encore t&apos;améliorer !
+                  Tu as de bonnes connaissances sur la Coupe du monde, mais tu
+                  peux encore t&apos;améliorer !
                 </p>
                 <Image
                   className="mx-auto my-4"
@@ -83,8 +86,8 @@ const QuizL1 = () => {
               <>
                 <p className="font-bold">Aïe 😬</p>
                 <p>
-                  Pas la moyenne... Tu as encore beaucoup à apprendre sur le
-                  Championnat de France !
+                  Pas la moyenne... Tu as encore beaucoup à apprendre sur la
+                  Coupe du monde !
                 </p>
                 <Image
                   className="mx-auto my-4"
@@ -123,4 +126,4 @@ const QuizL1 = () => {
   );
 };
 
-export default QuizL1;
+export default QuizCdm;

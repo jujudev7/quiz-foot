@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import questions from "../data/cdm"; // Importation des questions
+import questions from "../app/data/c1"; // Importation des questions
 import Question from "./Question"; // Composant pour afficher la question
 
-const QuizCdm = () => {
+const QuizC1 = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -29,9 +29,9 @@ const QuizCdm = () => {
   };
 
   return (
-    <div className="quiz w-1/2 flex justify-center">
+    <div className="quiz flex w-1/2 justify-center">
       {showScore ? (
-        <div className="score-section text-2xl text-center w-full rounded-md bg-cyan-200 p-4 space-y-4">
+        <div className="score-section w-full space-y-4 rounded-md bg-cyan-200 p-4 text-center text-2xl">
           Ton score est de{" "}
           <strong>
             {score} / {questions.length}
@@ -41,8 +41,8 @@ const QuizCdm = () => {
               <>
                 <p className="font-bold">Bravo 👏👏👏</p>
                 <p>
-                  La Coupe du monde n&apos;a presque plus aucun secret pour toi
-                  !
+                  La Ligue des Champions n&apos;a presque plus aucun secret pour
+                  toi !
                 </p>
                 <Image
                   className="mx-auto my-4"
@@ -56,8 +56,8 @@ const QuizCdm = () => {
               <>
                 <p className="font-bold">Pas mal 👍</p>
                 <p>
-                  Tu as de bonnes connaissances sur la Coupe du monde, mais tu
-                  peux encore t&apos;améliorer !
+                  Tu as de bonnes connaissances sur la Ligue des Champions, mais
+                  tu peux encore t&apos;améliorer !
                 </p>
                 <Image
                   className="mx-auto my-4"
@@ -87,7 +87,7 @@ const QuizCdm = () => {
                 <p className="font-bold">Aïe 😬</p>
                 <p>
                   Pas la moyenne... Tu as encore beaucoup à apprendre sur la
-                  Coupe du monde !
+                  Ligue des Champions !
                 </p>
                 <Image
                   className="mx-auto my-4"
@@ -102,7 +102,7 @@ const QuizCdm = () => {
                 <p className="font-bold">Catastrophique 🤦‍♀️</p>
                 <p>T&apos;as déjà vu un match de foot ?</p>
                 <Image
-                  className="mx-auto my-4"
+                  className="mx-auto mb-8 mt-4"
                   src="https://media1.tenor.com/m/_wNZAVN0DpsAAAAC/soccer-soccer-ball.gif"
                   alt="fail"
                   width={416}
@@ -126,4 +126,4 @@ const QuizCdm = () => {
   );
 };
 
-export default QuizCdm;
+export default QuizC1;

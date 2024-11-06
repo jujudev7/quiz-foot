@@ -1,7 +1,7 @@
 // app/admin/quizzes/page.tsx
 "use client";
 
-import QuizForm from "@/app/admin/components/QuizForm";
+import QuizForm from "@/components/QuizForm";
 import { useEffect, useState } from "react";
 
 const QuizzesAdmin = () => {

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import questions from "../data/c1"; // Importation des questions
+import questions from "../app/data/cdf"; // Importation des questions
 import Question from "./Question"; // Composant pour afficher la question
 
-const QuizC1 = () => {
+const QuizCdf = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -29,9 +29,9 @@ const QuizC1 = () => {
   };
 
   return (
-    <div className="quiz w-1/2 flex justify-center">
+    <div className="quiz flex w-1/2 justify-center">
       {showScore ? (
-        <div className="score-section text-2xl text-center w-full rounded-md bg-cyan-200 p-4 space-y-4">
+        <div className="score-section w-full space-y-4 rounded-md bg-cyan-200 p-4 text-center text-2xl">
           Ton score est de{" "}
           <strong>
             {score} / {questions.length}
@@ -40,10 +40,7 @@ const QuizC1 = () => {
             {score >= 9 ? (
               <>
                 <p className="font-bold">Bravo 👏👏👏</p>
-                <p>
-                  La Ligue des Champions n&apos;a presque plus aucun secret pour
-                  toi !
-                </p>
+                <p>La Ligue 1 n&apos;a presque plus aucun secret pour toi !</p>
                 <Image
                   className="mx-auto my-4"
                   src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTMwdTEzOGIwcmRuOWZ2NXkybmp4MmUwN3BvNHpwYmEzcGlvdnAybyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TjAcxImn74uoDYVxFl/giphy.webp"
@@ -56,8 +53,8 @@ const QuizC1 = () => {
               <>
                 <p className="font-bold">Pas mal 👍</p>
                 <p>
-                  Tu as de bonnes connaissances sur la Ligue des Champions, mais
-                  tu peux encore t&apos;améliorer !
+                  Tu as de bonnes connaissances sur la Coupe de France, mais tu
+                  peux encore t&apos;améliorer !
                 </p>
                 <Image
                   className="mx-auto my-4"
@@ -87,7 +84,7 @@ const QuizC1 = () => {
                 <p className="font-bold">Aïe 😬</p>
                 <p>
                   Pas la moyenne... Tu as encore beaucoup à apprendre sur la
-                  Ligue des Champions !
+                  Coupe de France !
                 </p>
                 <Image
                   className="mx-auto my-4"
@@ -126,4 +123,4 @@ const QuizC1 = () => {
   );
 };
 
-export default QuizC1;
+export default QuizCdf;

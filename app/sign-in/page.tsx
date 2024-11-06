@@ -8,13 +8,13 @@ export default function SignInPage() {
   console.log("NEXTAUTH_URL:", process.env.NEXTAUTH_URL);
 
   return (
-    <div className="w-full p-4 flex items-center justify-center h-screen flex-col">
-      <div className="signin-container 2xl:w-1/3 xl:w-2/5 lg:w-1/2 md:w-3/5 sm:w-2/3 rounded-3xl bg-white border p-6 shadow-md">
-        <h1 className="text-3xl text-center font-bold my-6">
+    <div className="flex h-screen w-full flex-col items-center justify-center p-4">
+      <div className="signin-container rounded-3xl border bg-white p-6 shadow-md sm:w-2/3 md:w-3/5 lg:w-1/2 xl:w-2/5 2xl:w-1/3">
+        <h1 className="my-6 text-center text-3xl font-bold">
           Connexion à Quiz Foot
         </h1>
-        <div className="xl:w-3/5 lg:w-3/5 md:w-2/3 sm:w-3/4 mx-auto">
-          <button className="flex mx-auto rounded-full lg:text-base sm:text-sm text-sm p-2 border border-1 hover:border-slate-600 my-8">
+        <div className="mx-auto sm:w-3/4 md:w-2/3 lg:w-3/5 xl:w-3/5">
+          <button className="border-1 mx-auto my-8 flex rounded-full border p-2 text-sm hover:border-slate-600 sm:text-sm lg:text-base">
             <Image
               src="/google.svg"
               alt="logo Google"
@@ -30,18 +30,18 @@ export default function SignInPage() {
           <div className="flex items-center">
             <hr className="flex-grow border-t border-gray-300" />
             <span className="mx-4 text-gray-600">OU</span>
-            <hr className="flex-grow border-t border-gray-300 my-4" />
+            <hr className="my-4 flex-grow border-t border-gray-300" />
           </div>
-          <form className="w-full" action="">
+          <form className="w-full">
             <div className="my-6">
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="email" className="mb-2 block text-sm font-medium">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className="w-full p-2 border rounded-md"
+                className="w-full rounded-md border p-2"
                 placeholder="Entrez votre email"
                 autoComplete="email"
               />
@@ -49,7 +49,7 @@ export default function SignInPage() {
             <div className="mb-4">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium mb-2"
+                className="mb-2 block text-sm font-medium"
               >
                 Mot de passe
               </label>
@@ -57,14 +57,14 @@ export default function SignInPage() {
                 type="password"
                 id="password"
                 name="password"
-                className="w-full p-2 border rounded-md"
+                className="w-full rounded-md border p-2"
                 placeholder="Entrez votre mot de passe"
                 autoComplete="current-password"
               />
             </div>
             <button
               type="submit"
-              className="mt-4 w-full bg-blue-500 hover:bg-blue-800 text-white py-2 rounded-md mb-12"
+              className="mb-12 mt-4 w-full rounded-md bg-blue-500 py-2 text-white hover:bg-blue-800"
             >
               Se connecter
             </button>

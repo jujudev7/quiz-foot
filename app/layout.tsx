@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 import localFont from "next/font/local";
-import ClientLayout from "./ClientLayout"; // Importe le Client Component
+import { Navbar } from "../components/Navbar";
+import { Toaster } from "../components/ui/toaster";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -31,11 +33,14 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-slate-950 to-indigo-500`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-gradient-to-r from-slate-950 to-indigo-500 antialiased`}
       >
-        <ClientLayout>{children}</ClientLayout>
+        <SessionProvider>
+          <Navbar />
+          {children}
+          <Toaster />
+        </SessionProvider>
       </body>
     </html>
   );
 }
-
