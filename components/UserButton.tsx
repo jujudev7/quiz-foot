@@ -5,6 +5,7 @@ import Link from "next/link";
 import avatarPlaceholder from "../assets/images/avatar_placeholder.png";
 import { Button } from "../components/ui/button";
 
+import { signOut } from "@/auth";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -53,13 +54,16 @@ export default function UserButton({ user }: UserButtonProps) {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          {/* TODO: Add a logout functionality */}
-          <button
-            onClick={() => signOut({ callbackUrl: "/" })}
-            className="flex w-full items-center"
+          <form
+            action={async () => {
+              "use server";
+              await signOut();
+            }}
           >
-            <LogOut className="mr-2 h-4 w-4" /> Déconnexion
-          </button>
+            <button type="submit" className="flex w-full items-center">
+              <LogOut className="mr-2 h-4 w-4" /> Déconnexion
+            </button>
+          </form>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

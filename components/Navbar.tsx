@@ -1,5 +1,4 @@
-"use client";
-
+import { auth, signIn } from "@/auth";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import * as React from "react";
@@ -13,6 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "../components/ui/navigation-menu";
+import UserButton from "./UserButton";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -52,10 +52,9 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export default function Navbar() {
-  // export async function Navbar() {
-  //   const session = await auth();
-  //   const user = session?.user;
+export default async function Navbar() {
+  const session = await auth();
+  const user = session?.user;
 
   return (
     <div>
@@ -163,9 +162,9 @@ export default function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          {/* <NavigationMenuItem className="flex items-center px-2">
+          <NavigationMenuItem className="flex items-center px-2">
             {user ? <UserButton user={user} /> : <SignInButton />}
-          </NavigationMenuItem> */}
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </div>
@@ -199,5 +198,18 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 // function SignInButton() {
-//   return <Button onClick={() => signIn()}>Connexion</Button>;
+//   return <button onClick={() => signIn()}></button>;
 // }
+
+function SignInButton() {
+  return (
+    <form
+      action={async () => {
+        "use server";
+        await signIn();
+      }}
+    >
+      <button type="submit">Connexion</button>
+    </form>
+  );
+}
